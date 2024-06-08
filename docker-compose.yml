@@ -1,0 +1,59 @@
+version: '3.8'
+
+services:
+  elasticsearch:
+    image: docker.elastic.co/elasticsearch/elasticsearch:7.15.2
+    container_name: elasticsearch
+    user: "root:root"
+    ports:
+      - "9200:9200"
+      - "9300:9300"
+    volumes:
+      - ./elasticsearch_data:/usr/share/elasticsearch/data:rw
+      - ./elasticsearch.yml:/usr/share/elasticsearch/config/elasticsearch.yml:ro
+    networks:
+      spark-network:
+        ipv4_address: 172.20.0.4
+
+  logstash:
+    image: docker.elastic.co/logstash/logstash:7.15.2
+    container_name: logstash
+    volumes:
+      - ./logstash.conf:/usr/share/logstash/config/logstash.conf:rw
+      - /home/rihab-haddad/Healthcare-App-Containerization/logs/application.log:/app/log/file.log:rw
+    networks:
+      spark-network:
+        ipv4_address: 172.20.0.5
+
+  kibana:
+    image: docker.elastic.co/kibana/kibana:7.15.2
+    container_name: kibana
+    ports:
+      - "5601:5601"
+    volumes:
+      - ./kibana.yml:/usr/share/kibana/config/kibana.yml:ro
+    networks:
+      spark-network:
+        ipv4_address: 172.20.0.6
+
+  mimic_iv_pipeline:
+    build: .
+    volumes:
+      - ./data:/app/data
+      - ./notebooks:/app/notebooks
+      - /home/rihab-haddad/Healthcare-App-Containerization/logs/application.log:/app/log/file.log:rw
+    ports:
+      - "8888:8888"
+    environment:
+      - MIMIC_IV_DATA_PATH=/app/data
+    networks:
+      spark-network:
+        ipv4_address: 172.20.0.7
+
+networks:
+  spark-network:
+    driver: bridge
+    ipam:
+      driver: default
+      config:
+        - subnet: 172.20.0.0/24

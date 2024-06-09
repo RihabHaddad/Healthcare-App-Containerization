@@ -1,0 +1,23 @@
+2024-06-08 22:01:52,585 INFO Starting the notebook execution.
+2024-06-08 22:01:59,131 ERROR Module not found: No module named 'day_intervals_cohort'
+2024-06-08 22:21:08,728 INFO Starting the notebook execution.
+2024-06-08 22:21:15,364 INFO Starting the notebook execution.
+2024-06-08 22:21:28,427 INFO Starting the notebook execution.
+2024-06-08 22:21:28,456 ERROR Module not found: No module named 'day_intervals_cohort'
+2024-06-08 22:21:53,326 INFO Starting the notebook execution.
+2024-06-08 22:22:07,855 INFO Starting the notebook execution.
+2024-06-08 22:22:34,718 INFO Starting the notebook execution.
+2024-06-08 23:16:05,307 INFO Starting the notebook execution.
+2024-06-08 23:16:23,929 INFO Starting the notebook execution.
+2024-06-08 23:16:25,137 ERROR Module not found: No module named 'day_intervals_cohort'
+2024-06-08 23:35:04,346 ERROR An error occurred : name 'widgets' is not defined
+2024-06-08 23:35:12,930 ERROR An error occurred : name 'widgets' is not defined
+2024-06-08 23:36:11,493 ERROR An error occurred : name 'radio_input4' is not defined
+2024-06-09 00:00:00,000 INFO Test log entry
+2024-06-09 00:03:26,354 ERROR An error occurred : name 'radio_input4' is not defined
+2024-06-09 00:00:00,000 INFO Test log entry
+2024-06-09 00:00:00,000 INFO Test log entry
+2024-06-09 00:00:00,000 INFO Test log entry
+2024-06-09 00:00:00,000 INFO Test log entry
+2024-06-09 00:00:00,000 INFO Test log entry
+2024-06-09 00:00:00,000 INFO Test log entry

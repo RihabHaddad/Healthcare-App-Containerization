@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: mimic-iv-pipeline
-        image: mimic-iv-pipeline:latest
+        image: rihab26/mimic-iv-pipeline:latest
         ports:
         - containerPort: 8888
         env:
